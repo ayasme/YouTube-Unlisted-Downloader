@@ -8,8 +8,8 @@ Create a config.yaml file that includes the following information. See example_c
 | --- | --- |
 | api-key | [YouTube Data API V3](https://developers.google.com/youtube/v3/getting-started) key used for getting playlist info. |
 | rate-limit | Rate limit for youtube-dl (optional). |
-| dont-sleep | Location of the [Don't Sleep](https://www.softwareok.com/?seite=Microsoft/DontSleep) exe (optional). Running this program will prevent your computer from going to sleep while videos are downloading. |
-| download-folder | Location for downloaded files. |
+| dont-sleep | Path of the [Don't Sleep](https://www.softwareok.com/?seite=Microsoft/DontSleep) exe (optional). Running this program will prevent your computer from going to sleep while videos are downloading. |
+| download-folder | Path for downloaded files. |
 | output-template | youtube-dl output template (for naming files). |
 | playlists | Playlist IDs to download. |
 
