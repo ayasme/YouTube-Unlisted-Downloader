@@ -9,5 +9,5 @@ download-folder: 'C:\YouTube Downloads'
 output-template: '%(uploader)s_%(title)s_%(id)s'
 
 playlists:
-  - PL12345
-  - PL67890
+  - PL207194C1FE5DC72B
+  - PLD3FC61763E88EDD9
