@@ -14,4 +14,4 @@ Create a config.yaml file that includes the following information. See example_c
 | playlists | Playlist IDs to download. |
 
 Run main.py to download all pre-2017 unlisted videos from the playlists included in config.yaml. Video descriptions and metadata will be downloaded as well.
-youtube-dl for Python will be installed if it is not already present.
+[youtube-dl](https://github.com/ytdl-org/youtube-dl) for Python will be installed if it is not already present.
