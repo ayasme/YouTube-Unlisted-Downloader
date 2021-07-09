@@ -1,5 +1,7 @@
 api-key: abc123
 
+cookies: 'cookies.txt'
+
 rate-limit: 512K
 
 dont-sleep: ''
