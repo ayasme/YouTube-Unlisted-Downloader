@@ -7,6 +7,30 @@ import yaml
 import googleapiclient.discovery
 
 class YouTubeDownloader:
+    def __init__(self, apiKey, cookies = None, dont_sleep_path = None):
+        #YouTube Data API V3 key
+        self.ApiKey = apiKey
+
+        #YouTube cookies for logging in
+        if not cookies:
+            cookies = None
+        self.Cookies = cookies
+
+        #path to Don't Sleep exe
+        if not dont_sleep_path:
+            dont_sleep_path = None
+        self.DontSleepPath = dont_sleep_path
+
+        #ask for username and password
+        #self.Username = None
+        #self.Password = None
+        #username = input("Please input a username and password in order to download private/age-restricted videos (leave blank to skip)\nUsername:")
+        #if username:
+            #self.Username = username
+            #password = input("Password:")
+            #if password:
+                #self.Password = password
+
     def LoadConfig(yaml_file):
         if yaml_file is None:
             print("Error! Need a config file.")
@@ -15,12 +39,6 @@ class YouTubeDownloader:
         with open(yaml_file, 'r') as yf:
             config = yaml.safe_load(yf)
             return config
-
-    def __init__(self, apiKey, dont_sleep_path = None):
-        self.ApiKey = apiKey
-        if not dont_sleep_path:
-            dont_sleep_path = None
-        self.DontSleepPath = dont_sleep_path  
 
     def UpdateYouTubeDL():
         subprocess.call(['pip', 'install', 'youtube-dl', '--upgrade'])
@@ -82,12 +100,21 @@ class YouTubeDownloader:
         self.LaunchDontSleep()
 
         for v in videos:
+            print('\n')
+
             id = v["snippet"]["resourceId"]["videoId"]
 
             ytdl_args = ['youtube-dl', '-o', '{}\{}'.format(folder, output_template), 'https://www.youtube.com/watch?v={}'.format(id), '--write-description', '--write-info-json']
 
             if rate_limit is not None:
                 ytdl_args += ['-r', rate_limit]
+
+            if self.Cookies is not None:
+                ytdl_args += ['--cookies', self.Cookies]
+
+            #doesn't work:
+            #if self.Username is not None and self.Password is not None:
+            #    ytdl_args += ['-u', self.Username, '-p', self.Password]
 
             subprocess.call(ytdl_args)
 

@@ -5,7 +5,7 @@ if __name__ == "__main__":
     config = YouTubeDownloader.LoadConfig("config.yaml")
 
     if config is not None:
-        ytd = YouTubeDownloader(config["api-key"], config["dont-sleep"])
+        ytd = YouTubeDownloader(config["api-key"], config['cookies'], config["dont-sleep"])
 
         playlists = config["playlists"]
 
@@ -23,7 +23,9 @@ if __name__ == "__main__":
 
             filtered_videos = YouTubeDownloader.FilterVideos(videos)
 
-            if not os.path.exists(root_folder):
-                os.mkdir(root_folder)
+            download_folder = os.path.join(root_folder, playlist)
 
-            ytd.DownloadVideos(root_folder, filtered_videos, output_template, rate_limit)
+            if not os.path.exists(download_folder):
+                os.mkdir(download_folder)
+
+            ytd.DownloadVideos(download_folder, filtered_videos, output_template, rate_limit)
