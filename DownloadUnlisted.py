@@ -55,7 +55,8 @@ class YouTubeDownloader:
             return None
 
     def CloseDontSleep(self):
-        subprocess.call([self.DontSleepPath, 'exit'])
+        if self.DontSleepPath is not None:
+            subprocess.call([self.DontSleepPath, 'exit'])
 
     def GetPlaylist(self, playlist):
         #get all videos from playlist
