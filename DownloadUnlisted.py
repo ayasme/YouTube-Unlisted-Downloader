@@ -8,6 +8,8 @@ import googleapiclient.discovery
 
 class YouTubeDownloader:
     def __init__(self, apiKey, cookies = None, dont_sleep_path = None):
+        YouTubeDownloader.UpdateYouTubeDL()
+
         #YouTube Data API V3 key
         self.ApiKey = apiKey
 
@@ -94,9 +96,6 @@ class YouTubeDownloader:
         return filtered_videos
 
     def DownloadVideos(self, folder, videos, output_template, rate_limit = None):
-        #make sure youtube-dl is up to date
-        YouTubeDownloader.UpdateYouTubeDL()
-
         self.LaunchDontSleep()
 
         for v in videos:

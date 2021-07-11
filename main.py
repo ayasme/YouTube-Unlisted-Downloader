@@ -17,9 +17,8 @@ if __name__ == "__main__":
         if not rate_limit:
             rate_limit = None
 
-        videos = []
         for playlist in playlists:
-            videos += ytd.GetPlaylist(playlist)
+            videos = ytd.GetPlaylist(playlist)
 
             filtered_videos = YouTubeDownloader.FilterVideos(videos)
 
