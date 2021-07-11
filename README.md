@@ -1,8 +1,8 @@
 # YouTube-Unlisted-Downloader
-Script for downloading unlisted YouTube videos before they are made private on July 23rd, 2021. Requires [Python 3.x](https://www.python.org/).
+Script for downloading unlisted YouTube videos before they are made private on July 23rd, 2021. Requires [Python 3](https://www.python.org/) and [pip](https://pypi.org/project/pip/).
 
 ## Usage
-Create a config.yaml file that includes the following information. See example_config.yaml for an example.
+Create a config.yaml file that includes the following information. See [example_config.yaml](example_config.yaml) for an example.
 
 | Key | Value |
 | --- | --- |
