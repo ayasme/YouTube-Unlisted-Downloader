@@ -10,7 +10,7 @@ Download the latest release and extract it. In the same folder as the script, cr
 | download-folder | Path for downloaded files. |
 | playlists | Playlist IDs to download. |
 | output-template | youtube-dl [output template](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#output-template) (for naming files). |
-| cookies | Path to cookies file (optional). See the youtube-dl [documentation](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#how-do-i-pass-cookies-to-youtube-dl) for details. |
+| cookies | Path to cookies file (optional). See the youtube-dl [documentation](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#how-do-i-pass-cookies-to-youtube-dl) for details. Use this if you need to download age-restricted videos. |
 | rate-limit | [Rate limit](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#download-options) for youtube-dl (optional). |
 | dont-sleep | Path to [Don't Sleep](https://www.softwareok.com/?seite=Microsoft/DontSleep) exe (optional). Running this program will prevent your computer from going to sleep while videos are downloading. |
 
